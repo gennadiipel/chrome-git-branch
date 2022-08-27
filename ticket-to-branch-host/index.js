@@ -15,7 +15,9 @@ app.use(
 const port = 10101;
 
 app.post("/", (req, res) => {
-  exec(`cd ${req.body.pathToRepo} && git checkout -B ${req.body.branchName}`);
+  exec(
+    `cd ${req.body.pathToRepo} && git checkout -b ${req.body.branchName} master`
+  );
   res.json([req.body]);
 });
 

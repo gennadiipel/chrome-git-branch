@@ -15,7 +15,7 @@ document.getElementById("path-to-repo").addEventListener("blur", () => {
 
 chrome.runtime.onMessage.addListener((message) => {
   if (message.command === "branchNameGenerated") {
-    navigator.clipboard.writeText(message.branchName);
+    const branchName = message.branchName;
     chrome.storage.local.get(["pathToRepo"], ({ pathToRepo }) => {
       fetch(`http://localhost:10101`, {
         method: "POST",
@@ -26,8 +26,12 @@ chrome.runtime.onMessage.addListener((message) => {
           branchName,
           pathToRepo,
         }),
-      }).then((res) => {
-        alert(res.body);
+      }).then(() => {
+        document.getElementById(
+          "success-message"
+        ).innerHTML = `Branch <b>${branchName}</b> created`;
+        document.getElementById("success-message").style.display = "block";
+        document.getElementById("create-branch").style.display = "none";
       });
     });
   }

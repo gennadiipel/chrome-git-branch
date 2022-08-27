@@ -20,6 +20,17 @@ button {
   text-transform: uppercase;
   font-weight: bold;
   color: #000;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+button:active {
+  transform: translateY(-2px);
+  background-color: #4b7b7b;
 }
 
 h3 {
@@ -29,4 +40,13 @@ h3 {
 input {
   width: 80%;
   margin-top: 12px;
+}
+
+p {
+  font-size: 13px;
+  color: #666;
+  font-style: italic;
+  margin-top: 20px;
+  display: none;
+  text-align: center;
 }
