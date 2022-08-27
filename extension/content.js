@@ -24,18 +24,5 @@ chrome.runtime.onMessage.addListener((message, sender, response) => {
       command: "branchNameGenerated",
       branchName,
     });
-
-    fetch(`http://localhost:10101`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        branchName,
-        pathToRepo: "/Users/gennadiipel/Work/chrome-git-branch",
-      }),
-    }).then((res) => {
-      alert(res.body);
-    });
   }
 });

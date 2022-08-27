@@ -1,4 +1,3 @@
-const { spawn } = require("child_process");
 const { exec } = require("child_process");
 const express = require("express");
 const cors = require("cors");
@@ -17,8 +16,6 @@ const port = 10101;
 
 app.post("/", (req, res) => {
   exec(`cd ${req.body.pathToRepo} && git checkout -B ${req.body.branchName}`);
-  // const git = spawn(`git cd git checkout -B ${req.body.branchName}`);
-
   res.json([req.body]);
 });
 
