@@ -1,0 +1,18 @@
+{
+  "name": "GIT branch name generator",
+  "version": "1.0",
+  "manifest_version": 3,
+  "action": {
+    "default_popup": "popup/popup.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://*.atlassian.net/browse/TS-*"],
+      "js": ["content.js"]
+    }
+  ],
+  "permissions": ["activeTab", "scripting"]
+}

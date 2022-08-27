@@ -1,0 +1,18 @@
+{
+  "name": "ticket-to-branch-host",
+  "version": "1.0.0",
+  "description": "Host for ticket-to-branch extension",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "ticket-to-branch"
+  ],
+  "author": "Gennadii Pel",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.1"
+  }
+}
